@@ -1,18 +1,20 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
 
-body {
+.page {
   background: #EEEEF4;
   color:#999;
   font-family:Roboto;
 }
 
-h1{
+.warning-content__title {
   font-weight:100;
   font-size:27pt;
   color:#E43;
 }
 
-p{font-weight:300;}
+.warning-content__text {
+  font-weight:300;
+}
 
 .warning-content {
 	position:absolute;
@@ -21,6 +23,14 @@ p{font-weight:300;}
   height:300px;
   text-align:center;
   margin:0;
-  
-  
+}
+
+.link-reset {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-reset {
+  list-style: none;
+  padding: 0;
 }
