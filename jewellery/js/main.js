@@ -49,35 +49,36 @@
 
 (function () {
   if (document.querySelector('.header__open-menu-button')) {
-    var header = document.querySelector('.header');
+    var page = document.querySelector('.page');
+    var header = page.querySelector('.header');
     var menuButton = header.querySelector('.header__open-menu-button');
     var siteSearch = header.querySelector('.site-search');
     var logInField = header.querySelector('.user-area__item--log-in');
     var navigation = header.querySelector('.navigation');
 
-    if (header.querySelector('.header__intro')) {
-      var introSection = header.querySelector('.header__intro');
-    }
-
     var menuOpen = function () {
+      page.classList.add('page--disabled');
       header.classList.add('header--menu-open');
       siteSearch.classList.add('site-search--menu-open');
       logInField.classList.add('user-area__item--menu-open');
       navigation.classList.add('navigation--menu-open');
-
-      if (introSection) {
-        introSection.classList.add('header__intro--menu-open');
-      }
+      page.addEventListener('keydown', keyPressHandler);
     };
 
     var menuClose = function () {
+      page.classList.remove('page--disabled');
       header.classList.remove('header--menu-open');
       siteSearch.classList.remove('site-search--menu-open');
       logInField.classList.remove('user-area__item--menu-open');
       navigation.classList.remove('navigation--menu-open');
+      page.removeEventListener('keydown', keyPressHandler);
+    };
 
-      if (introSection) {
-        introSection.classList.remove('header__intro--menu-open');
+    var keyPressHandler = function (evt) {
+      if (evt.key === 'Escape' || evt.key === 'Esc') {
+        evt.preventDefault();
+
+        menuClose();
       }
     };
 
@@ -85,10 +86,9 @@
     siteSearch.classList.remove('site-search--menu-open');
     logInField.classList.remove('user-area__item--menu-open');
     navigation.classList.remove('navigation--menu-open');
+    header.classList.remove('header--menu-no-js');
 
-    if (introSection) {
-      introSection.classList.remove('header__intro--menu-open');
-    }
+    menuButton.classList.remove('header__open-menu-button--no-js');
 
     menuButton.addEventListener('click', function () {
       if (header.classList.contains('header--menu-open')) {
@@ -229,7 +229,8 @@
         el: '.swiper-pagination',
         clickable: true,
         renderBullet: function (index, className) {
-          return '<li class=\'pagination__item '.concat(className, '\'>').concat(index + 1, '</li>');
+          return '<li class=\'pagination__item ' +
+            className + '\'>' + (index + 1) + '</li>';
         },
       },
 
@@ -249,12 +250,11 @@
 
           pagination: {
             type: 'fraction',
-            renderFraction: function renderFraction(currentClass, totalClass, index, total) {
-              return '<li class=\'pagination__item pagination__item--active '
-              .concat(currentClass, '\' type=\'button\'>0')
-              .concat(index, '</li> of <li class=\'pagination__item ')
-              .concat(totalClass, '\' type=\'button\'>0')
-              .concat(total, '</li>');
+            renderFraction: function (currentClass, totalClass) {
+              return '<li class=\'pagination__item ' +
+                currentClass + '\'></li>' +
+                ' of ' +
+                '<li class=' + totalClass + '></li>';
             }
           }
         },
@@ -308,12 +308,11 @@
           pagination: {
             el: '.card__pagination',
             type: 'fraction',
-            renderFraction: function renderFraction(currentClass, totalClass, index, total) {
-              return '<li class=\'pagination__item pagination__item--active '
-              .concat(currentClass, '\' type=\'button\'>0')
-              .concat(index, '</li> of <li class=\'pagination__item ')
-              .concat(totalClass, '\' type=\'button\'>0')
-              .concat(total, '</li>');
+            renderFraction: function (currentClass, totalClass) {
+              return '<li class=\'pagination__item ' +
+                currentClass + '\'></li>' +
+                ' of ' +
+                '<li class=' + totalClass + '></li>';
             }
           }
         },

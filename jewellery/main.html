@@ -19,24 +19,24 @@
 </head>
 
 <body class="page__body">
-  <header class="header header--menu-open">
+  <header class="header header--menu-open header--menu-no-js">
     <div class="container header__container">
       <div class="header__actions">
-        <button class="header__open-menu-button button" type="button" aria-label="Toggle menu">
+        <button class="header__open-menu-button header__open-menu-button--no-js button" type="button" aria-label="Toggle menu">
           <svg width="25" height="18">
             <use xlink:href="img/sprite.svg#icon-menu"></use>
           </svg>
         </button>
-        <div class="site-search site-search">
+        <div class="site-search">
           <form action="https://echo.htmlacademy.ru" method="GET">
             <label class="visually-hidden" for="site-search">Search through site content</label>
+            <input type="search" id="site-search" name="search" placeholder="Type here to search">
             <svg width="14" height="14">
               <use xlink:href="img/sprite.svg#icon-search"></use>
             </svg>
-            <input type="search" id="site-search" name="search" placeholder="Type here to search">
           </form>
         </div>
-        <a href="index.html" class="header__logo">
+        <a class="header__logo">
           <svg width="66" height="66">
             <use xlink:href="img/sprite.svg#logo"></use>
           </svg>
@@ -86,20 +86,20 @@
         </ul>
       </nav>
     </div>
-    <section class="header__intro header__intro--menu-open">
+  </header>
+  <main>
+    <section class="intro">
       <div class="container">
         <h1 class="visually-hidden">Ch jewellery store</h1>
         <h2>Perfection</h2>
         <p>made to be yours</p>
       </div>
     </section>
-  </header>
-  <main>
     <section class="new-arrivals">
       <div class="container new-arrivals__container">
         <div class="slider">
           <h2>New In</h2>
-          <a class="page__link" href="catalog.html">Shop Now</a>
+          <a class="site-link" href="catalog.html">Shop Now</a>
           <div class="slider__container swiper-container">
             <ul class="new-arrivals__list slider__wrapper swiper-wrapper">
               <li class="new-arrivals__item slider__slide swiper-slide">
@@ -277,11 +277,11 @@
     <section class="blog">
       <div class="container">
         <h2>Blog</h2>
-        <a class="page__link" href="#">Read All</a>
+        <a class="site-link" href="#">Read All</a>
         <ul class="blog__list">
           <li class="blog__item">
-            <article class="blog__article">
-              <div class="blog__image-container">
+            <article class="blog-article">
+              <div class="blog-article__image-container">
                 <picture>
                   <source type="image/webp" media="(max-width: 767px)" srcset="img/blog/how-to-care-mobile.webp 1x, img/blog/how-to-care-mobile@2x.webp 2x">
                   <source type="image/webp" media="(max-width: 1023px)" srcset="img/blog/how-to-care-tablet.webp 1x, img/blog/how-to-care-tablet@2x.webp 2x">
@@ -290,16 +290,16 @@
                   <img src="img/blog/how-to-care.jpg" srcset="img/blog/how-to-care@2x.jpg 2x" alt="How to care for your jewellery" width="285" height="300" loading="lazy">
                 </picture>
               </div>
-              <div class="blog__info">
+              <div class="blog-article__info">
                 <time datetime="2019-09-30">September 30, 2019</time>
                 <h3>How to care for your jewellery</h3>
-                <a class="page__link" href="#">Read Article</a>
+                <a class="site-link" href="#">Read Article</a>
               </div>
             </article>
           </li>
           <li class="blog__item">
-            <article class="blog__article">
-              <div class="blog__image-container">
+            <article class="blog-article">
+              <div class="blog-article__image-container">
                 <picture>
                   <source type="image/webp" media="(max-width: 767px)" srcset="img/blog/power-of-crystals-mobile.webp 1x, img/blog/power-of-crystals-mobile@2x.webp 2x">
                   <source type="image/webp" media="(max-width: 1023px)" srcset="img/blog/power-of-crystals-tablet.webp 1x, img/blog/power-of-crystals-tablet@2x.webp 2x">
@@ -308,16 +308,16 @@
                   <img src="img/blog/power-of-crystals.jpg" srcset="img/blog/power-of-crystals@2x.jpg 2x" alt="Power of crystals" width="285" height="300" loading="lazy">
                 </picture>
               </div>
-              <div class="blog__info blog__info--reversed">
+              <div class="blog-article__info blog-article__info--reversed">
                 <time datetime="2019-09-23">September 23, 2019</time>
                 <h3>Power of crystals</h3>
-                <a class="page__link" href="#">Read Article</a>
+                <a class="site-link" href="#">Read Article</a>
               </div>
             </article>
           </li>
           <li class="blog__item blog__item--big">
-            <article class="blog__article blog__article--big">
-              <div class="blog__image-container blog__image-container--big">
+            <article class="blog-article blog-article--big">
+              <div class="blog-article__image-container blog-article__image-container--big">
                 <picture>
                   <source type="image/webp" media="(max-width: 767px)" srcset="img/blog/aw-trends-mobile.webp 1x, img/blog/aw-trends-mobile@2x.webp 2x">
                   <source type="image/webp" media="(max-width: 1023px)" srcset="img/blog/aw-trends-tablet.webp 1x, img/blog/aw-trends-tablet@2x.webp 2x">
@@ -326,10 +326,10 @@
                   <img src="img/blog/aw-trends.jpg" srcset="img/blog/aw-trends@2x.jpg 2x" alt="AW 19 trends" width="285" height="300" loading="lazy">
                 </picture>
               </div>
-              <div class="blog__info blog__info--big">
+              <div class="blog-article__info blog-article__info--big">
                 <time datetime="2019-09-23">September 16, 2019</time>
                 <h3>AW 19 trends</h3>
-                <a class="page__link" href="#">Read Article</a>
+                <a class="site-link" href="#">Read Article</a>
               </div>
             </article>
           </li>
@@ -398,7 +398,7 @@
     <section class="instagram-posts">
       <div class="container">
         <h2>@Chjewellery</h2>
-        <a class="page__link" href="#">Follow Us</a>
+        <a class="site-link" href="#">Follow Us</a>
         <ul class="instagram-posts__list">
           <li class="instagram-posts__item">
             <a href="#">

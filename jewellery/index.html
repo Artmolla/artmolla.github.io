@@ -19,24 +19,24 @@
 </head>
 
 <body class="page__body">
-  <header class="header header--menu-open">
+  <header class="header header--menu-open header--menu-no-js">
     <div class="container header__container">
       <div class="header__actions">
-        <button class="header__open-menu-button button" type="button" aria-label="Toggle menu">
+        <button class="header__open-menu-button header__open-menu-button--no-js button" type="button" aria-label="Toggle menu">
           <svg width="25" height="18">
             <use xlink:href="img/sprite.svg#icon-menu"></use>
           </svg>
         </button>
-        <div class="site-search site-search">
+        <div class="site-search">
           <form action="https://echo.htmlacademy.ru" method="GET">
             <label class="visually-hidden" for="site-search">Search through site content</label>
+            <input type="search" id="site-search" name="search" placeholder="Type here to search">
             <svg width="14" height="14">
               <use xlink:href="img/sprite.svg#icon-search"></use>
             </svg>
-            <input type="search" id="site-search" name="search" placeholder="Type here to search">
           </form>
         </div>
-        <a class="header__logo">
+        <a class="header__logo" href="main.html" title="Go to main page">
           <svg width="66" height="66">
             <use xlink:href="img/sprite.svg#logo"></use>
           </svg>
@@ -72,15 +72,16 @@
         </ul>
       </nav>
     </div>
-    <section class="header__intro header__intro--menu-open">
+  </header>
+  <main>
+    <section class="intro">
       <div class="container">
         <h1 class="visually-hidden">Ch jewellery store</h1>
         <h2>Perfection</h2>
         <p>made to be yours</p>
       </div>
     </section>
-  </header>
-  <main></main>
+  </main>
   <footer class="footer">
     <div class="container footer__container">
       <section class="subscribe">

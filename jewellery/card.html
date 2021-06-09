@@ -19,24 +19,24 @@
 </head>
 
 <body class="page__body">
-  <header class="header header--menu-open header--inner">
+  <header class="header header--menu-open header--menu-no-js">
     <div class="container header__container">
       <div class="header__actions">
-        <button class="header__open-menu-button button" type="button" aria-label="Toggle menu">
+        <button class="header__open-menu-button header__open-menu-button--no-js button" type="button" aria-label="Toggle menu">
           <svg width="25" height="18">
             <use xlink:href="img/sprite.svg#icon-menu"></use>
           </svg>
         </button>
-        <div class="site-search site-search">
+        <div class="site-search">
           <form action="https://echo.htmlacademy.ru" method="GET">
             <label class="visually-hidden" for="site-search">Search through site content</label>
+            <input type="search" id="site-search" name="search" placeholder="Type here to search">
             <svg width="14" height="14">
               <use xlink:href="img/sprite.svg#icon-search"></use>
             </svg>
-            <input type="search" id="site-search" name="search" placeholder="Type here to search">
           </form>
         </div>
-        <a href="index.html" class="header__logo" title="Go to index page">
+        <a href="main.html" class="header__logo" title="Go to main page">
           <svg width="66" height="66">
             <use xlink:href="img/sprite.svg#logo"></use>
           </svg>
@@ -204,7 +204,7 @@
       <div class="container new-arrivals__container">
         <div class="slider">
           <h2>You May Also Like</h2>
-          <a class="page__link" href="catalog.html">Shop Now</a>
+          <a class="site-link" href="catalog.html">Shop Now</a>
           <div class="slider__container swiper-container">
             <ul class="new-arrivals__list new-arrivals__list--inner slider__wrapper swiper-wrapper">
               <li class="new-arrivals__item slider__slide swiper-slide">
